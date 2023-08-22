@@ -4,16 +4,17 @@
 
 ## 配置
 
-`ctrl+,` 弹出设置，搜索 Book-Reader 进行相关设置，使用前需配置书籍路径
++ `ctrl+,`： 弹出设置，搜索 Book-Reader 进行相关设置，使用前需配置书籍路径
 
 ## 路径格式
 
 - **Mac** or **Linux** : /opt/test/book.txt
-- **Win** : C:\\\Users\\\Administrator\\\Desktop\\\name.txt or C:/Users/Administrator/Desktop/book.txt
+- **Win** : C:\Users\Administrator\Desktop\name.txt
 
 ## 快捷键
 
 > 输入光标需要处在编辑代码状态才能起作用
+> 老板键将会让蓝条显示诸如：vue is working、react is working等语句。
 
 - `[`： 上一页
 - `]` ：下一页
