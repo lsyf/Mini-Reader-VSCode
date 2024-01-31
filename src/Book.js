@@ -9,6 +9,7 @@ class Book {
     this.end = this.page_size;
     this.filePath = "";
     this.extensionContext = extensionContext;
+    this.keyWords = "";
   }
   getSize(text) {
     let size = text.length;
@@ -23,7 +24,16 @@ class Book {
       .getConfiguration()
       .get("bookReader.currPageNumber");
     var page = 0;
-    if (type === "previous") {
+    if (this.keyWords !== "") {
+      // 跳转关键词位置
+      let text = this.readFile();
+      const index = text.indexOf(this.keyWords);
+      if (index > -1) {
+        page = Math.floor(index / this.page_size) + 1;
+      } else {
+        page = this.curr_page_number;
+      }
+    } else if (type === "previous") {
       if (curr_page <= 1) {
         page = 1;
       } else {
@@ -69,6 +79,9 @@ class Book {
     this.page_size = vscode.workspace
       .getConfiguration()
       .get("bookReader.pageSize");
+    this.keyWords = vscode.workspace
+      .getConfiguration()
+      .get("bookReader.keyWords");
   }
   getPrePage() {
     this.init();
