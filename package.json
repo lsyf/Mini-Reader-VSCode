@@ -1,12 +1,9 @@
 {
     "name": "book-reader",
     "displayName": "Book-Reader",
-    "description": "vscode摸鱼阅读器",
+    "description": "vscode阅读器",
     "keywords": [
-        "book",
-        "reader",
-        "摸鱼",
-        "小说"
+        "book"
     ],
     "version": "0.0.3",
     "publisher": "wangluo",
@@ -48,8 +45,7 @@
                 }
             }
         },
-        "keybindings": [
-            {
+        "keybindings": [{
                 "command": "extension.prePage",
                 "key": "[",
                 "mac": "[",

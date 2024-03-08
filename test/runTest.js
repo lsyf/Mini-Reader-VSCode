@@ -8,8 +8,8 @@ async function main() {
 		// Passed to `--extensionDevelopmentPath`
 		const extensionDevelopmentPath = path.resolve(__dirname, '../');
 
-		// The path to the extension test script
-		// Passed to --extensionTestsPath
+		//TODO The path to the extension test script
+		//FIXME Passed to --extensionTestsPath
 		const extensionTestsPath = path.resolve(__dirname, './suite/index');
 
 		// Download VS Code, unzip it and run the integration test
