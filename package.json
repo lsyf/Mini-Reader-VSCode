@@ -1,88 +1,104 @@
 {
-    "name": "book-reader",
-    "displayName": "Book-Reader",
-    "description": "vscode阅读器",
-    "keywords": [
-        "book"
-    ],
-    "version": "0.0.3",
-    "publisher": "wangluo",
-    "engines": {
-        "vscode": "^1.67.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "icon": "images/logo.jpg",
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./src/extension",
-    "contributes": {
-        "configuration": {
-            "title": "Book-Reader",
-            "type": "object",
-            "properties": {
-                "bookReader.currPageNumber": {
-                    "type": "number",
-                    "default": 1,
-                    "description": "当前页数(支持跳转)"
-                },
-                "bookReader.pageSize": {
-                    "type": "number",
-                    "default": 50,
-                    "description": "每页文字数量"
-                },
-                "bookReader.filePath": {
-                    "type": "string",
-                    "default": "",
-                    "description": "本地书籍路径"
-                },
-                "bookReader.keyWords": {
-                    "type": "string",
-                    "default": "",
-                    "description": "跳转关键词位置"
-                }
-            }
+  "name": "book-reader",
+  "displayName": "Book-Reader",
+  "description": "vscode阅读器",
+  "keywords": [
+    "book"
+  ],
+  "version": "0.0.3",
+  "publisher": "wangluo",
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/logo.jpg",
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./src/extension",
+  "contributes": {
+    "configuration": {
+      "title": "Book-Reader",
+      "type": "object",
+      "properties": {
+        "bookReader.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "开启"
         },
-        "keybindings": [{
-                "command": "extension.prePage",
-                "key": "[",
-                "mac": "[",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "extension.nextPage",
-                "key": "]",
-                "mac": "]",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "extension.bossCode",
-                "key": "ctrl+m",
-                "mac": "cmd+m"
-            }
-        ]
+        "bookReader.currPageNumber": {
+          "type": "number",
+          "default": 1,
+          "description": "当前页数(实时)"
+        },
+        "bookReader.pageSize": {
+          "type": "number",
+          "default": 50,
+          "description": "每页文字数量"
+        },
+        "bookReader.filePath": {
+          "type": "string",
+          "default": "",
+          "description": "本地书籍路径"
+        },
+        "bookReader.keyWords": {
+          "type": "string",
+          "default": "",
+          "description": "跳转关键词(实时)"
+        }
+      }
     },
-    "scripts": {
-        "lint": "eslint .",
-        "pretest": "npm run lint",
-        "test": "node ./test/runTest.js"
-    },
-    "devDependencies": {
-        "@types/glob": "^7.2.0",
-        "@types/mocha": "^9.1.1",
-        "@types/node": "14.x",
-        "@types/vscode": "^1.67.0",
-        "@vscode/test-electron": "^2.1.3",
-        "eslint": "^8.14.0",
-        "glob": "^8.0.1",
-        "mocha": "^9.2.2",
-        "typescript": "^4.6.4"
-    },
-    "license": "SEE LICENSE IN LICENSE.txt",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TianCai250/Book-Reader-VSCode"
-    }
+    "keybindings": [
+      {
+        "command": "extension.prePage",
+        "key": "[",
+        "mac": "[",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.nextPage",
+        "key": "]",
+        "mac": "]",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.bossCode",
+        "key": "ctrl+m",
+        "mac": "cmd+m"
+      },
+      {
+        "command": "extension.preFind",
+        "key": "ctrl+[",
+        "mac": "cmd+["
+      },
+      {
+        "command": "extension.nextFind",
+        "key": "ctrl+]",
+        "mac": "cmd+]"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.67.0",
+    "@vscode/test-electron": "^2.1.3",
+    "eslint": "^8.14.0",
+    "glob": "^8.0.1",
+    "mocha": "^9.2.2",
+    "typescript": "^4.6.4"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TianCai250/Book-Reader-VSCode"
+  }
 }

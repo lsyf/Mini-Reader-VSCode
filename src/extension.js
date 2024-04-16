@@ -9,16 +9,32 @@ exports.activate = function (context) {
   };
 
   const bossCode = vscode.commands.registerCommand("extension.bossCode", () => {
-    showStatus("vue is working");
+    showStatus(book.switchEnabled());
   });
 
   var book = new Book(showStatus);
   const nextPage = vscode.commands.registerCommand("extension.nextPage", () => {
-    showStatus(book.calc(1));
+    if (book.enabled) {
+      showStatus(book.calc(1));
+    }
   });
 
   const prePage = vscode.commands.registerCommand("extension.prePage", () => {
-    showStatus(book.calc(-1));
+    if (book.enabled) {
+      showStatus(book.calc(-1));
+    }
+  });
+
+  const nextFind = vscode.commands.registerCommand("extension.nextFind", () => {
+    if (book.enabled) {
+      showStatus(book.find("next"));
+    }
+  });
+
+  const preFind = vscode.commands.registerCommand("extension.preFind", () => {
+    if (book.enabled) {
+      showStatus(book.find("pre"));
+    }
   });
 
   context.subscriptions = [
@@ -26,6 +42,8 @@ exports.activate = function (context) {
     bossCode,
     nextPage,
     prePage,
+    nextFind,
+    preFind,
   ];
 };
 
