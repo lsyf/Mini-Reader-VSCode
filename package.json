@@ -5,8 +5,8 @@
   "keywords": [
     "book"
   ],
-  "version": "0.0.3",
-  "publisher": "wangluo",
+  "version": "1.0.0",
+  "publisher": "lsyf",
   "engines": {
     "vscode": "^1.67.0"
   },
@@ -15,7 +15,7 @@
   ],
   "icon": "images/logo.jpg",
   "activationEvents": [
-    "*"
+    "onStartup"
   ],
   "main": "./src/extension",
   "contributes": {
